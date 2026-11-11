@@ -1,39 +1,49 @@
 # Fotografías de Charza Instituto de Wushu
 
-## Fotografías proporcionadas por el propietario
+## Procedencia y autorización
 
-Las siguientes imágenes fueron entregadas directamente para el carrusel. No se atribuyen a Instagram ni se reutilizan como fotografías de portada, programas o equipo. Se convirtieron a WebP sin recortar el contenido, sin ampliar los originales y sin modificar a las personas.
+Las catorce fotografías fueron entregadas directamente por el propietario para su integración en PR #1. Se usan con la autorización expresa de esta solicitud. No se atribuyen a publicaciones concretas de Instagram: no se proporcionaron URLs de publicaciones verificables. No se utilizaron fotografías de stock ni generación de imágenes.
 
-| Archivo en assets/images/athletes/ | Original del propietario | Ubicación | Verificación |
+Los originales permanecen intactos en sus carpetas de origen: las nueve fotografías JPG en Pictures y los cinco PNG en Downloads. El procesamiento solo genera derivados WebP en assets/images/. No se cambian rostros, cuerpos ni equipo.
+
+## Atletas: 800 × 1000 px, proporción 4:5
+
+| Archivo en assets/images/athletes/ | Original | Atleta y ubicación | Ajuste individual |
 | --- | --- | --- | --- |
-| raul-rubio.webp | Raul.jpg | Raúl Rubio | Entrega directa |
-| dylan-cazares.webp | Dylan.jpg | Dylan Cázares | Entrega directa |
-| karen-pastrana.webp | Karen.jpg | Karen Pastrana | Entrega directa |
-| aaron-pastrana.webp | Aaron.jpg | Aarón Pastrana | Entrega directa |
-| apolo-zuany.webp | Apolo.jpg | Apolo Zuany | Entrega directa |
-| isis-chavez.webp | Isis.jpg | Isis Chávez | Entrega directa |
-| diego-hernandez.webp | Diego.jpg | Diego Hernández | Entrega directa |
-| leonardo-avila.webp | Sebas.jpg | Leonardo Ávila | El propietario confirmó expresamente esta correspondencia |
-| ruben-pastrana.webp | Ruben.jpg | Rubén Pastrana | Entrega directa |
+| raul-rubio.webp | Raul.jpg | Raúl Rubio, carrusel | Ventana x=170, y=0, 684×854; conserva cabeza, mano elevada y extremo de la lanza. |
+| dylan-cazares.webp | Dylan.jpg | Dylan Cázares, carrusel | Ventana x=47, y=0, 984×1230; recorte lateral leve que conserva cabeza, manos y postura baja. |
+| karen-pastrana.webp | Karen.jpg | Karen Pastrana, carrusel | Ventana x=22, y=0, 1035×1294; recorte lateral mínimo, con cabeza y pies visibles. |
+| aaron-pastrana.webp | Aaron.jpg | Aarón Pastrana, carrusel | Ventana x=430, y=0, 853×1066; desplazada hacia la derecha para conservar la figura y las manos. |
+| apolo-zuany.webp | Apolo.jpg | Apolo Zuany, carrusel | Ventana x=0, y=100, 474×592; elimina fondo superior e inferior conservando cabeza, espada y pies. |
+| isis-chavez.webp | Isis.jpg | Isis Chávez, carrusel | Ventana x=275, y=0, 719×899; recorte lateral que conserva el desplante, cabeza, mano extendida y espada. |
+| diego-hernandez.webp | Diego.jpg | Diego Hernández, carrusel | Ventana x=0, y=275, 900×1125; conserva cabeza, pies y punta de la lanza. |
+| leonardo-avila.webp | Sebas.jpg | Leonardo Ávila, carrusel | Identidad confirmada expresamente por el propietario en esta conversación. Ventana x=0, y=330, 1079×1348; conserva cabeza y pies. |
+| ruben-pastrana.webp | Ruben.jpg | Rubén Pastrana, carrusel | Foto completa escalada proporcionalmente, con relleno neutro #222327; un recorte vertical cortaría la vara o la mano. |
 
-## Imágenes oficiales de Instagram pendientes
+La compresión WebP usa calidad 84. Los recortes que difieren mínimamente de 4:5 se ajustan con relleno neutro, sin deformación. El carrusel mantiene imágenes de 800×1000, con carga diferida y alternativa descriptiva si falta un archivo.
 
-Fuente permitida: https://www.instagram.com/wushucharza/
+## Portada y programas
 
-El perfil no pudo recuperarse mediante la herramienta web y la búsqueda pública no devolvió publicaciones verificables. No se descargó ninguna fotografía de Instagram. No se sortearon restricciones de acceso. No hay URLs de publicaciones individuales confirmadas; deben proporcionarse junto con una exportación autorizada. No se inventan enlaces de publicaciones.
+| Archivo en assets/images/site/ | Original | Ubicación | Tratamiento |
+| --- | --- | --- | --- |
+| inicio.webp | Inicio.png | Fondo de portada, escritorio/tablet | 967×647, sin recorte físico; posición CSS independiente y atenuación para legibilidad. |
+| inicio-small.webp | Inicio.png | Fondo de portada, móvil | Variante de 640 px de ancho. La foto ocupa la franja superior y el texto queda debajo para conservar los rostros. |
+| wushu.webp | Wushu.png | Programa Wushu | Lienzo 800×600 con imagen completa y relleno neutro; no recorta al grupo. |
+| sanda.webp | Sanda.png | Programa Sanda / Combate | Lienzo 800×600 con foto vertical completa y relleno lateral, casco y cabeza visibles. |
+| gimnasia.webp | GIMNASIA.png | Programa Gimnasia | Lienzo 800×600 con escalado proporcional; mantiene manos, pies y movimiento. |
+| taichi.webp | Taichi.png | Programa Taichi | Lienzo 800×600 con foto completa y relleno lateral; cabeza y pies visibles. |
 
-| Archivo recomendado en assets/images/instagram/ | Ubicación | Fotografía recomendada | URL de publicación | Estado |
-| --- | --- | --- | --- | --- |
-| hero.webp | Portada | Atleta de Charza ejecutando una forma de Wushu, composición amplia | Pendiente de enlace verificable del propietario | Marcador visible |
-| wushu.webp | Programa Wushu | Forma o técnica tradicional | Pendiente | Marcador visible |
-| sanda.webp | Programa Sanda | Combate controlado con equipo de protección | Pendiente | Marcador visible |
-| gimnasia.webp | Programa Gimnasia | Entrenamiento real de saltos, flexibilidad o acrobacias | Pendiente | Marcador visible |
-| taichi.webp | Programa Taichi | Clase o demostración real de Taichi de Charza | Pendiente | Marcador visible |
-| equipo.webp | Trayectoria internacional | Equipo de Charza representando a México | Pendiente | Marcador visible |
+Los cuatro programas mantienen la proporción 4:3, sin estirar las fotografías. Calidad WebP 85 para programas y 87 para portada. Se conservan los elementos ya presentes en los archivos suministrados, incluidos los controles de captura en Wushu.png. Sanda.png (327×417) y GIMNASIA.png (515×380) tienen resolución limitada: no se inventa detalle ni se reconstruyen zonas cortadas en el original.
 
-No se utilizaron imágenes de stock, generadas por IA, de prensa o Facebook. Los marcadores no solicitan imágenes a servicios externos. Al recibir los archivos y enlaces, se podrán reemplazar por imágenes locales con alt, dimensiones, carga diferida y recorte revisado. La portada requiere carga prioritaria.
+## Reproducción
 
-## Datos de atletas
+Con sharp disponible en Node.js:
 
-Los nueve nombres y sus conteos se conservaron del index.html publicado: 8, 5, 3, 3, 3, 2, 2, 1 y 1 (28 en total). Solo se enumeran eventos individuales cuando constan en ese contenido: Copa Mundial de Taolu para Raúl, Mundial Junior 2024 para Dylan y Panamericano 2022 para Karen. No se inferieron nuevas participaciones individuales a partir de las fotografías. El resultado de Paul Mateo Moreno se conserva en resultados destacados, sin sumarlo a la lista de nueve atletas.
+    node scripts/prepare-images.cjs <carpeta-de-originales-JPG> <carpeta-de-originales-PNG>
+
+También se puede indicar la ruta de sharp mediante CHARZA_SHARP_MODULE. El sitio no depende de sharp en tiempo de ejecución ni requiere un proceso de compilación.
+
+## Pendientes y registros
+
+La imagen de equipo independiente de Trayectoria conserva su marcador anterior; esta solicitud asigna Inicio.png a portada. No se cambian los nueve conteos (8, 5, 3, 3, 3, 2, 2, 1 y 1), sus logros ni las estadísticas. No se infieren nuevas participaciones a partir de las fotos.
 
