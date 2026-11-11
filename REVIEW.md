@@ -4,20 +4,22 @@ Esta propuesta conserva HTML, CSS y JavaScript integrados en un solo index.html.
 
 ## Cambios
 
-- Encabezado compacto, marca original, navegación por secciones y menú móvil.
+- Encabezado compacto con la marca original en un contenedor circular y tres enlaces: Horarios, Contacto y WhatsApp.
 - Portada con las dos acciones principales y fotografía Inicio proporcionada por el propietario.
 - Eliminación de la introducción repetida; cuatro programas con sus fotografías reales.
 - Combate en gris; conservación de todos los días, edades y horas de la tabla.
-- Orientador con dialog nativo, selección por intereses y objetivos, horarios existentes y enlace de WhatsApp. No usa API, cookies ni almacenamiento de respuestas.
+- Ayuda circular «?» junto al horario y orientador compacto con dialog nativo y tres pasos. No usa API, cookies ni almacenamiento de respuestas.
 - Carrusel de nueve atletas, oculto hasta abrir «Conoce nuestros atletas», con retratos 800×1000 preparados individualmente, navegación por botones y teclado, desplazamiento táctil y alternativa visual ante imágenes faltantes.
-- Conservación de las estadísticas y resultados; contacto y pie simplificados.
+- Conservación de estadísticas y resultados personales dentro de la tarjeta correspondiente; eliminación del listado separado de resultados. Contacto y pie simplificados.
 - Metadatos locales, canonical, Open Graph, datos estructurados y estilos de foco y movimiento reducido.
 
 ## Orientador
 
-La actividad preferida aporta 5 puntos. Los objetivos aportan: disciplina a Wushu (3); confianza a Wushu/Sanda (1 cada uno); fuerza a Gimnasia (2) y Sanda (1); flexibilidad a Gimnasia (3) y Wushu (1); combate a Sanda (4); movilidad a Taichi (4); competencias a Wushu/Sanda (2 cada uno). Un empate principal, información insuficiente o edad inferior a cuatro años deriva a un instructor. La edad solo selecciona horarios existentes. A los 10 o 15 años se muestran los grupos coincidentes para confirmación. Taichi requiere confirmar admisión por edad con el instructor, porque no se ha proporcionado una edad mínima.
+El orientador pregunta únicamente para quién son las clases, edad y experiencia previa (sí/no), una pregunta por pantalla. Atrás conserva las respuestas. La edad debe ser un entero entre 1 y 120; esto valida la entrada, no afirma elegibilidad para ninguna clase. Las validaciones se muestran en español.
 
-Las respuestas permanecen solo en la página abierta. El enlace de WhatsApp incluye únicamente la disciplina y edad cuando el visitante decide abrirlo.
+No se asigna automáticamente una disciplina ni disponibilidad: el equipo confirma las opciones según edad y experiencia. El resultado muestra «Tu próximo entrenamiento comienza aquí», resume las respuestas y permite consultar por WhatsApp, ver horarios o comenzar de nuevo.
+
+Las respuestas permanecen solo en memoria mientras la página está abierta. El enlace editable de WhatsApp incorpora destinatario, edad y experiencia. No se envía ningún mensaje automáticamente. El modal se cierra con X, Escape o clic fuera y devuelve el foco a la ayuda.
 
 ## Pendientes de contenido
 
@@ -25,14 +27,13 @@ Se integraron las cinco fotografías de portada y programas entregadas por el pr
 
 ## Verificación realizada
 
-Pruebas de navegador aprobadas en 375, 430, 768, 1024 y 1440 px: sin desbordamiento horizontal; tabla idéntica a la versión base; nueve tarjetas y conteos correctos; cuatro resultados conservados; menú móvil; modal, Escape y retorno de foco; recomendaciones Sanda/Taichi y derivación por datos insuficientes; rangos de edad superpuestos; carrusel por botones, teclado y toque; alternativa ante imagen faltante; anclas válidas y sin errores de JavaScript.
+Las comprobaciones del seguimiento se registran en la entrega: encabezado de tres enlaces, logo circular, ayuda de 34 px, tres pasos excluyentes, validación española, preservación de respuestas, reinicio y WhatsApp; carrusel plegable, nueve imágenes y resultados personales, cinco resoluciones y conservación de horarios, programas, estadísticas y contacto.
 
 El enlace de recursos de Drive se conserva. La herramienta web no pudo comprobar el acceso público a la carpeta; conviene confirmar sus permisos de visualización antes de publicar.
 
-La integración de imágenes se comprobó de nuevo en las cinco resoluciones: nueve retratos 4:5, cuatro fotos de programa 4:3, sección plegable cerrada al cargar, navegación, orientador y carrusel con toque. Se compararon contra la versión anterior el encabezado, título y CTA de portada, horarios, estadísticas, resultados y contacto: se conservan idénticos. Se revisaron las cabezas, posturas y armas en una hoja de contacto y en las tarjetas.
+La integración de imágenes conserva los nueve retratos 4:5, cuatro fotos de programa 4:3 y fondo Inicio, con los encuadres individuales documentados. Los archivos de imagen no se modificaron durante este seguimiento.
 
 ## Publicación de la propuesta
 
 Propuesta en rama de revisión; no debe mezclarse con main hasta que el propietario autorice publicar. El workflow existente publica main. No se modifica ese workflow ni el dominio.
-
 
