@@ -26,6 +26,27 @@ async function portrait(item) {
 (async()=>{
   await fs.mkdir(path.join(root,'assets/images/athletes'),{recursive:true});
   await fs.mkdir(path.join(root,'assets/images/site'),{recursive:true});
+  if(process.argv.includes('--precision')){
+    // Only the decorative medal artwork is extracted from the supplied design reference.
+    const medalMask='<svg width="1672" height="941" xmlns="http://www.w3.org/2000/svg"><g fill="white"><path d="M353 334 398 333 420 445 375 457Z M420 277 551 277 516 413 460 413Z M559 333 605 331 601 442 549 442Z"/><ellipse cx="383" cy="509" rx="87" ry="83"/><ellipse cx="578" cy="509" rx="83" ry="83"/><ellipse cx="489" cy="502" rx="110" ry="111"/><path d="M315 593Q478 566 642 593L642 632Q479 660 315 632Z"/><ellipse cx="478" cy="594" rx="163" ry="17"/></g></svg>';
+    const matte=await sharp(Buffer.from(medalMask)).blur(.7).png().toBuffer();
+    await sharp(siteDir).ensureAlpha().composite([{input:matte,blend:'dest-in'}]).png().toBuffer()
+      .then(b=>sharp(b).extract({left:285,top:272,width:390,height:382}).webp({quality:92,alphaQuality:100,effort:6})
+        .toFile(path.join(root,'assets/images/site/medals-reference.webp')));
+    const map=await sharp(siteDir).extract({left:1140,top:270,width:532,height:335}).ensureAlpha().raw().toBuffer({resolveWithObject:true});
+    const mapBackground=await sharp(map.data,{raw:map.info}).blur(5).raw().toBuffer();
+    for(let i=0;i<map.data.length;i+=4){const r=map.data[i],g=map.data[i+1],b=map.data[i+2],delta=(r-b)-(mapBackground[i]-mapBackground[i+2]);map.data[i]=212;map.data[i+1]=172;map.data[i+2]=85;map.data[i+3]=r>125&&r-g>7&&g-b>7&&delta>4?Math.min(255,delta*16):0;}
+    await sharp(map.data,{raw:map.info}).webp({quality:90,alphaQuality:100,effort:6}).toFile(path.join(root,'assets/images/site/world-map-reference.webp'));
+    const upper=await sharp(path.join(root,'assets/images/site/karen-champagne.webp')).extract({left:0,top:0,width:279,height:610}).ensureAlpha().raw().toBuffer({resolveWithObject:true});
+    const authentic=await sharp(path.join(athleteDir,'Karen.jpg')).extract({left:374,top:134,width:279,height:610}).sharpen({sigma:.6,m1:.5,m2:1}).ensureAlpha().raw().toBuffer();
+    for(let y=0;y<upper.info.height;y++){
+      const strength=y<145?.52:y<330?.52-(y-145)/185*.24:y<490?.28-(y-330)/160*.16:Math.max(0,.12-(y-490)/120*.12);
+      for(let x=0;x<upper.info.width;x++){const i=(y*upper.info.width+x)*4;const edge=Math.min(1,x/12,(upper.info.width-1-x)/12),l=.2126*authentic[i]+.7152*authentic[i+1]+.0722*authentic[i+2];upper.data[i]=Math.min(255,.15*authentic[i]+.85*l+8);upper.data[i+1]=Math.min(255,.15*authentic[i+1]+.85*l+5);upper.data[i+2]=Math.min(255,.15*authentic[i+2]+.85*l);upper.data[i+3]=Math.round(upper.data[i+3]*strength*edge);}
+    }
+    await sharp(upper.data,{raw:upper.info}).webp({quality:90,alphaQuality:100,effort:6}).toFile(path.join(root,'assets/images/site/karen-upper-champagne.webp'));
+    console.log('Prepared reference medals/map and selectively faded authentic Karen upper-body derivative. Profile photos untouched.');
+    return;
+  }
   if(process.argv.includes('--international')){
     await sharp(path.join(siteDir,'Karen2.jpg')).rotate().extract({left:176,top:450,width:880,height:1100})
       .resize(800,1000).webp({quality:84,effort:5}).toFile(path.join(root,'assets/images/athletes/karen-pastrana-2.webp'));

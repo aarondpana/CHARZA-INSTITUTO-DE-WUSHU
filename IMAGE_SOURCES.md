@@ -58,3 +58,15 @@ Para reproducir solo los tres nuevos derivados, sin regenerar las otras fotograf
     node scripts/prepare-images.cjs <carpeta-Pictures> <carpeta-Downloads> --international
 
 La galería responsive muestra tres columnas en escritorio, dos en tableta y una en móvil. Cada foto acompaña a su propio resumen e historial expandible; ya no existe una lista de atletas separada del retrato.
+
+## Refinamiento visual de referencia
+
+El propietario proporcionó codex-clipboard-41b67040-15b8-4f00-9612-e7de60cb3206.png (1672×941) como referencia decorativa. No se usan sus personas, nombres ni estadísticas como datos del sitio.
+
+- medals-reference.webp (390×382): extracción del conjunto de tres medallas mediante máscara alfa trazada; conserva reflejos, laureles, cintas negras/doradas y base del arte de referencia. No representa un total de medallas reales.
+- world-map-reference.webp (532×335): extracción de puntos y curvas doradas, con eliminación del fondo mediante diferencia cromática respecto al fondo suavizado. Sus puntos y conexiones son únicamente decorativos; no identifican rutas ni sedes verificadas de competencia.
+- karen-upper-champagne.webp (279×610): conserva el alfa del recorte anterior de Karen.jpg y recupera los píxeles auténticos del original alineado (x=374, y=134), sin reconstrucción. Recorte de torso superior con cabeza completa, nitidez moderada, desaturación cálida y transparencia selectiva: rostro más definido y descenso gradual hasta transparente. Karen2.jpg sigue asignada exclusivamente al perfil.
+
+Los tres derivados se exportan en WebP con alfa. Los originales, karen-champagne.webp y todas las fotos de perfil permanecen intactos. Para reproducir sin regenerar otras fotos:
+
+    node scripts/prepare-images.cjs <carpeta-Pictures> <archivo-PNG-referencia> --precision
