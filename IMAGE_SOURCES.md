@@ -70,3 +70,7 @@ El propietario proporcionó codex-clipboard-41b67040-15b8-4f00-9612-e7de60cb3206
 Los tres derivados se exportan en WebP con alfa. Los originales, karen-champagne.webp y todas las fotos de perfil permanecen intactos. Para reproducir sin regenerar otras fotos:
 
     node scripts/prepare-images.cjs <carpeta-Pictures> <archivo-PNG-referencia> --precision
+
+## Versión final autorizada
+
+La fotografía decorativa de Karen se retira del HTML y de todos los estilos de la sección por solicitud del propietario. Sus derivados y originales se conservan archivados; no se solicitan ni renderizan como fondo del sitio. Karen2 sigue siendo la fotografía del perfil de Karen. Las medallas y el mapa permanecen. No se cambia ninguna foto de atleta ni registro deportivo.

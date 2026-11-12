@@ -10,7 +10,7 @@ Esta propuesta conserva HTML, CSS y JavaScript integrados en un solo index.html.
 - Combate en gris; conservación de todos los días, edades y horas de la tabla.
 - Ayuda circular «?» junto al horario y orientador compacto con dialog nativo y tres pasos. No usa API, cookies ni almacenamiento de respuestas.
 - Galería de diez atletas, oculta hasta abrir «Conoce nuestros atletas», con retratos 800×1000 preparados individualmente. Tres columnas en escritorio, dos en tableta, una en móvil; cada perfil integra foto, resumen e historial accesible expandible con altura limitada y desplazamiento para registros largos.
-- Trayectoria con tres medallas decorativas, mapa tenue y recorte transparente de la foto anterior de Karen como fondo. Karen2 reemplaza únicamente su foto de perfil y Samuel Montalvo, Ph.D. se añade como décimo atleta.
+- Trayectoria con tres medallas decorativas y mapa dorado. La fotografía decorativa de Karen se retira en la versión final autorizada; sus archivos se conservan archivados. Karen2 permanece como su foto de perfil y Samuel Montalvo, Ph.D. es el décimo atleta.
 - Registro combinado de diez atletas y 42 participaciones: 25 panamericanas, 12 mundiales y cinco categorías adicionales de un evento cada una (Copa Mundial, World Games, SportAccord, NORCECA e IWUF virtual). Desglose accesible y advertencia de que no es un medallero ni prueba de afiliación histórica. Buenos Aires 2026 mantiene nueve representantes.
 - Metadatos locales, canonical, Open Graph, datos estructurados y estilos de foco y movimiento reducido.
 
@@ -38,4 +38,4 @@ La integración conserva todos los derivados anteriores, las fotos de programas 
 
 ## Publicación de la propuesta
 
-Propuesta en rama de revisión; no debe mezclarse con main hasta que el propietario autorice publicar. El workflow existente publica main. No se modifica ese workflow ni el dominio.
+El propietario autorizó fusionar PR #1 y publicar después de aprobar las pruebas finales. El workflow existente publica main. No se modifica ese workflow, DNS ni el dominio. Referencia de reversión previa a esta publicación: 88f509bfe4c17ea860daf6caf05ccae94c8287e6. El estado real del despliegue y las comprobaciones públicas se documentan en la entrega, no se deducen de la existencia del archivo local.
