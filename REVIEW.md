@@ -9,8 +9,9 @@ Esta propuesta conserva HTML, CSS y JavaScript integrados en un solo index.html.
 - Eliminación de la introducción repetida; cuatro programas con sus fotografías reales.
 - Combate en gris; conservación de todos los días, edades y horas de la tabla.
 - Ayuda circular «?» junto al horario y orientador compacto con dialog nativo y tres pasos. No usa API, cookies ni almacenamiento de respuestas.
-- Carrusel de nueve atletas, oculto hasta abrir «Conoce nuestros atletas», con retratos 800×1000 preparados individualmente, navegación por botones y teclado, desplazamiento táctil y alternativa visual ante imágenes faltantes.
-- Conservación de estadísticas y resultados personales dentro de la tarjeta correspondiente; eliminación del listado separado de resultados. Contacto y pie simplificados.
+- Galería de diez atletas, oculta hasta abrir «Conoce nuestros atletas», con retratos 800×1000 preparados individualmente. Tres columnas en escritorio, dos en tableta, una en móvil; cada perfil integra foto, resumen e historial accesible expandible con altura limitada y desplazamiento para registros largos.
+- Trayectoria con tres medallas decorativas, mapa tenue y recorte transparente de la foto anterior de Karen como fondo. Karen2 reemplaza únicamente su foto de perfil y Samuel Montalvo, Ph.D. se añade como décimo atleta.
+- Registro combinado de diez atletas y 42 participaciones: 25 panamericanas, 12 mundiales y cinco categorías adicionales de un evento cada una (Copa Mundial, World Games, SportAccord, NORCECA e IWUF virtual). Desglose accesible y advertencia de que no es un medallero ni prueba de afiliación histórica. Buenos Aires 2026 mantiene nueve representantes.
 - Metadatos locales, canonical, Open Graph, datos estructurados y estilos de foco y movimiento reducido.
 
 ## Orientador
@@ -23,17 +24,18 @@ Las respuestas permanecen solo en memoria mientras la página está abierta. El 
 
 ## Pendientes de contenido
 
-Se integraron las cinco fotografías de portada y programas entregadas por el propietario. El marcador independiente de equipo en Trayectoria sigue pendiente. Ver IMAGE_SOURCES.md para procedencia, identificación, límites de resolución y encuadres. Los eventos individuales no documentados no se inventaron.
+Se integraron las cinco fotografías de portada y programas entregadas por el propietario. El marcador de equipo fue retirado en la revisión de Trayectoria. Ver IMAGE_SOURCES.md para procedencia, identificación, límites de resolución y encuadres. El historial de Samuel procede de la lista de 14 eventos autorizada por el propietario; no se añadieron medallas ni posiciones no documentadas.
 
 ## Verificación realizada
 
-Las comprobaciones del seguimiento se registran en la entrega: encabezado de tres enlaces, logo circular, ayuda de 34 px, tres pasos excluyentes, validación española, preservación de respuestas, reinicio y WhatsApp; carrusel plegable, nueve imágenes y resultados personales, cinco resoluciones y conservación de horarios, programas, estadísticas y contacto.
+Las comprobaciones de esta actualización se ejecutaron con Playwright y Edge a 375, 430, 768, 1024 y 1440 px. Se verificaron diez perfiles unificados, fotografías 800×1000, todos los historiales, resultados personales sin reasignación, los 14 eventos de Samuel, suma 42 y categorías 25+12+1+1+1+1+1, nueve representantes en Buenos Aires, estados cerrado/abierto, controles por teclado, desplazamiento del historial largo, canal alfa del recorte, reducción de movimiento y ausencia de desbordamientos o errores JavaScript.
+
+La comparación del DOM confirmó encabezado, portada, programas, horarios, contacto, pie y orientador intactos. El código del orientador también se comparó sin diferencias y se probó su recorrido completo con enlace de WhatsApp editable. Las capturas incluyen sección cerrada/abierta, diez perfiles, Karen2, Samuel con historial y vistas móviles.
 
 El enlace de recursos de Drive se conserva. La herramienta web no pudo comprobar el acceso público a la carpeta; conviene confirmar sus permisos de visualización antes de publicar.
 
-La integración de imágenes conserva los nueve retratos 4:5, cuatro fotos de programa 4:3 y fondo Inicio, con los encuadres individuales documentados. Los archivos de imagen no se modificaron durante este seguimiento.
+La integración conserva todos los derivados anteriores, las fotos de programas y el fondo Inicio. Se añaden Karen2 y Samuel en 4:5 y un derivado transparente de Karen.jpg. No se sobrescriben originales ni las fotografías de los otros atletas.
 
 ## Publicación de la propuesta
 
 Propuesta en rama de revisión; no debe mezclarse con main hasta que el propietario autorice publicar. El workflow existente publica main. No se modifica ese workflow ni el dominio.
-

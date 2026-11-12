@@ -26,6 +26,23 @@ async function portrait(item) {
 (async()=>{
   await fs.mkdir(path.join(root,'assets/images/athletes'),{recursive:true});
   await fs.mkdir(path.join(root,'assets/images/site'),{recursive:true});
+  if(process.argv.includes('--international')){
+    await sharp(path.join(siteDir,'Karen2.jpg')).rotate().extract({left:176,top:450,width:880,height:1100})
+      .resize(800,1000).webp({quality:84,effort:5}).toFile(path.join(root,'assets/images/athletes/karen-pastrana-2.webp'));
+    await sharp(path.join(siteDir,'Samuel.jpg')).rotate().extract({left:230,top:0,width:853,height:1066})
+      .resize(800,1000,{fit:'contain',background:'#222327'}).webp({quality:84,effort:5})
+      .toFile(path.join(root,'assets/images/athletes/samuel-montalvo.webp'));
+    // Hand-traced alpha matte removes only the old photograph's background; no generative reconstruction.
+    const outline='M465 164 C476 143 511 131 549 136 C584 137 609 151 609 177 L619 197 621 206 637 215 637 220 626 224 629 235 620 247 606 254 604 270 622 287 C642 314 653 362 650 412 L637 468 628 510 632 554 627 597 632 650 628 704 618 718 614 763 615 824 609 891 619 927 609 958 594 1007 578 1061 576 1090 C592 1098 623 1099 629 1116 C628 1130 601 1134 575 1132 L549 1124 525 1139 518 1164 C537 1174 558 1177 564 1191 C563 1206 533 1217 500 1221 L450 1221 405 1210 378 1196 376 1177 385 1143 390 1079 403 1018 409 954 416 891 416 822 426 753 423 713 408 691 418 652 428 607 441 565 435 533 416 502 403 472 393 441 381 418 375 394 C370 369 393 332 420 307 L438 288 449 262 453 235 458 216 459 184 Z';
+    const mask=await sharp(Buffer.from('<svg width="1079" height="1294" xmlns="http://www.w3.org/2000/svg"><path d="'+outline+'" fill="white"/></svg>')).blur(.6).png().toBuffer();
+    await sharp(path.join(athleteDir,'Karen.jpg')).rotate().ensureAlpha()
+      .composite([{input:mask,blend:'dest-in'}]).png().toBuffer()
+      .then(buffer=>sharp(buffer).trim({threshold:1}).resize({height:1100,withoutEnlargement:true})
+        .modulate({saturation:.45}).tint('#c6b38d').webp({quality:86,alphaQuality:100,effort:5})
+        .toFile(path.join(root,'assets/images/site/karen-champagne.webp')));
+    console.log('Prepared Karen2, Samuel and the transparent non-generative Karen cutout; originals unchanged.');
+    return;
+  }
   for(const item of portraits) await portrait(item);
   for(const [source,name] of [['Wushu.png','wushu'],['Sanda.png','sanda'],['GIMNASIA.png','gimnasia'],['Taichi.png','taichi']]){
     await sharp(path.join(siteDir,source)).rotate().resize(800,600,{fit:'contain',background:'#222327'})
@@ -37,4 +54,3 @@ async function portrait(item) {
   }
   console.log(JSON.stringify(portraits.map(({name,note})=>({name,note})),null,2));
 })().catch(error=>{console.error(error);process.exit(1);});
-

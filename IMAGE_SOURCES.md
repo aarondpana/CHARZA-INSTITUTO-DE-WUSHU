@@ -2,7 +2,7 @@
 
 ## Procedencia y autorización
 
-Las catorce fotografías fueron entregadas directamente por el propietario para su integración en PR #1. Se usan con la autorización expresa de esta solicitud. No se atribuyen a publicaciones concretas de Instagram: no se proporcionaron URLs de publicaciones verificables. No se utilizaron fotografías de stock ni generación de imágenes.
+Las catorce fotografías iniciales y las dos fotografías adicionales Karen2.jpg y Samuel.jpg fueron entregadas directamente por el propietario para su integración en PR #1. Se usan con la autorización expresa de esta solicitud. No se atribuyen a publicaciones concretas de Instagram: no se proporcionaron URLs de publicaciones verificables. No se utilizaron fotografías de stock ni generación de imágenes.
 
 Los originales permanecen intactos en sus carpetas de origen: las nueve fotografías JPG en Pictures y los cinco PNG en Downloads. El procesamiento solo genera derivados WebP en assets/images/. No se cambian rostros, cuerpos ni equipo.
 
@@ -12,7 +12,9 @@ Los originales permanecen intactos en sus carpetas de origen: las nueve fotograf
 | --- | --- | --- | --- |
 | raul-rubio.webp | Raul.jpg | Raúl Rubio, carrusel | Ventana x=170, y=0, 684×854; conserva cabeza, mano elevada y extremo de la lanza. |
 | dylan-cazares.webp | Dylan.jpg | Dylan Cázares, carrusel | Ventana x=47, y=0, 984×1230; recorte lateral leve que conserva cabeza, manos y postura baja. |
-| karen-pastrana.webp | Karen.jpg | Karen Pastrana, carrusel | Ventana x=22, y=0, 1035×1294; recorte lateral mínimo, con cabeza y pies visibles. |
+| karen-pastrana.webp | Karen.jpg | Derivado anterior conservado; ya no es la foto del perfil | Ventana x=22, y=0, 1035×1294; archivo conservado sin cambios. |
+| karen-pastrana-2.webp | Downloads/Karen2.jpg | Karen Pastrana, perfil actual | Ventana x=176, y=450, 880×1100; elimina techo, conserva cabeza, mano extendida y pies, sin deformación. |
+| samuel-montalvo.webp | Downloads/Samuel.jpg | Samuel Montalvo, Ph.D., décimo perfil | Ventana x=230, y=0, 853×1066; conserva cabeza, mano elevada, espada y salto, con ajuste proporcional 800×1000. |
 | aaron-pastrana.webp | Aaron.jpg | Aarón Pastrana, carrusel | Ventana x=430, y=0, 853×1066; desplazada hacia la derecha para conservar la figura y las manos. |
 | apolo-zuany.webp | Apolo.jpg | Apolo Zuany, carrusel | Ventana x=0, y=100, 474×592; elimina fondo superior e inferior conservando cabeza, espada y pies. |
 | isis-chavez.webp | Isis.jpg | Isis Chávez, carrusel | Ventana x=275, y=0, 719×899; recorte lateral que conserva el desplante, cabeza, mano extendida y espada. |
@@ -20,7 +22,7 @@ Los originales permanecen intactos en sus carpetas de origen: las nueve fotograf
 | leonardo-avila.webp | Sebas.jpg | Leonardo Ávila, carrusel | Identidad confirmada expresamente por el propietario en esta conversación. Ventana x=0, y=330, 1079×1348; conserva cabeza y pies. |
 | ruben-pastrana.webp | Ruben.jpg | Rubén Pastrana, carrusel | Foto completa escalada proporcionalmente, con relleno neutro #222327; un recorte vertical cortaría la vara o la mano. |
 
-La compresión WebP usa calidad 84. Los recortes que difieren mínimamente de 4:5 se ajustan con relleno neutro, sin deformación. El carrusel mantiene imágenes de 800×1000, con carga diferida y alternativa descriptiva si falta un archivo.
+La compresión WebP usa calidad 84. Los recortes que difieren mínimamente de 4:5 se ajustan con relleno neutro, sin deformación. La galería mantiene imágenes de 800×1000, con carga diferida y alternativa descriptiva si falta un archivo.
 
 ## Portada y programas
 
@@ -45,5 +47,14 @@ También se puede indicar la ruta de sharp mediante CHARZA_SHARP_MODULE. El siti
 
 ## Pendientes y registros
 
-La imagen de equipo independiente de Trayectoria conserva su marcador anterior; esta solicitud asigna Inicio.png a portada. No se cambian los nueve conteos (8, 5, 3, 3, 3, 2, 2, 1 y 1), sus logros ni las estadísticas. No se infieren nuevas participaciones a partir de las fotos.
+El marcador de foto de equipo se eliminó al rediseñar Trayectoria. Inicio.png sigue en portada. Las fotografías no se usan como evidencia de resultados: el registro de diez atletas y 42 participaciones se basa en las trayectorias autorizadas por el propietario; no demuestra afiliación a Charza en todos los eventos históricos. Buenos Aires 2026 conserva nueve representantes.
 
+## Fondo decorativo de Karen
+
+assets/images/site/karen-champagne.webp deriva del original Pictures/Karen.jpg, no de Karen2.jpg. Se aplica una máscara alfa trazada manualmente sobre su contorno mediante SVG y sharp, sin IA generativa, reconstrucción corporal ni sustitución de rostro. Conserva cabeza, postura y proporciones. Se suaviza únicamente el borde de la máscara (0.6 px), se reduce moderadamente la saturación y se aplica tono champagne. El WebP tiene canal alfa; CSS aplica opacidad baja y desvanecimiento, y lo oculta en móvil para proteger la lectura. El original y el WebP anterior permanecen intactos.
+
+Para reproducir solo los tres nuevos derivados, sin regenerar las otras fotografías:
+
+    node scripts/prepare-images.cjs <carpeta-Pictures> <carpeta-Downloads> --international
+
+La galería responsive muestra tres columnas en escritorio, dos en tableta y una en móvil. Cada foto acompaña a su propio resumen e historial expandible; ya no existe una lista de atletas separada del retrato.
